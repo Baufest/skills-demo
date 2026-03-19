@@ -1,16 +1,35 @@
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button-variants";
+import { cn } from "@/lib/utils";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { BadTable } from "@/components/bad-table";
+
+const expectations = [
+  "ID column moved to the first position",
+  "All numeric columns right-aligned",
+  "Consistent date formatting throughout (e.g., Jan 15, 2025)",
+  "Currency symbols with proper locale formatting ($24,500.00)",
+  "Color-coded status badges with text labels",
+  "Em-dashes (\u2014) for null/empty values",
+  "Currency merged into the amount column",
+  "Consistent decimal precision across all number columns",
+];
 
 export default function TryWithPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-      <p className="text-sm font-medium text-accent uppercase tracking-wider mb-2">
+      <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">
         Step 5
       </p>
       <h1 className="text-3xl font-bold tracking-tight mb-3">
         Try With Skills Loaded
       </h1>
-      <p className="text-lg text-muted mb-8 max-w-3xl">
+      <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
         Now repeat the exact same exercise — same table, same prompt — but with
         the data-table-design skill loaded.
       </p>
@@ -23,38 +42,46 @@ export default function TryWithPage() {
       </div>
 
       <div className="space-y-6 max-w-3xl">
-        <div className="bg-surface border border-border rounded-xl p-6 space-y-4">
-          <h2 className="text-xl font-semibold">Instructions</h2>
-          <ol className="space-y-3 text-muted">
-            <li className="flex gap-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent-light text-accent text-xs font-bold shrink-0">
-                1
-              </span>
-              <span>
-                Confirm the skill is loaded. In Claude Code, type{" "}
-                <code>/skills</code> — you should see{" "}
-                <code>data-table-design</code> listed.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent-light text-accent text-xs font-bold shrink-0">
-                2
-              </span>
-              <span>
-                First, reset the table component back to its original state by
-                running <code>git checkout src/components/bad-table.tsx</code>.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent-light text-accent text-xs font-bold shrink-0">
-                3
-              </span>
-              <span>
-                Paste the <strong>exact same prompt</strong> you used before:
-              </span>
-            </li>
-          </ol>
-        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Instructions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-3 text-muted-foreground">
+              <li className="flex gap-3">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
+                  1
+                </span>
+                <span>
+                  Confirm the skill is loaded. In Claude Code, type{" "}
+                  <code>/skills</code> — you should see{" "}
+                  <code>data-table-design</code> listed.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
+                  2
+                </span>
+                <span>
+                  Reset the table component back to its original state:{" "}
+                  <code>git checkout src/components/bad-table.tsx</code>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
+                  3
+                </span>
+                <span>
+                  Paste the{" "}
+                  <strong className="text-foreground">
+                    exact same prompt
+                  </strong>{" "}
+                  you used before:
+                </span>
+              </li>
+            </ol>
+          </CardContent>
+        </Card>
 
         <div className="space-y-2">
           <p className="text-sm font-medium">
@@ -67,87 +94,61 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
           </pre>
         </div>
 
-        <div className="bg-green-50 border border-green-200 rounded-xl p-6 space-y-3">
-          <h2 className="text-lg font-semibold text-green-900">
-            What to Expect This Time
-          </h2>
-          <p className="text-green-800 text-sm">
-            With the skill loaded, the agent now has detailed, opinionated
-            instructions. You should see:
-          </p>
-          <ul className="space-y-2 text-sm text-green-800">
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>ID column moved to the first position</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>All numeric columns right-aligned</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Consistent date formatting throughout (e.g., Jan 15, 2025)
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Currency symbols with proper locale formatting ($24,500.00)
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Color-coded status badges with text labels
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Em-dashes (&mdash;) for null/empty values
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Currency merged into the amount column
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-500">&check;</span>
-              <span>
-                Consistent decimal precision across all number columns
-              </span>
-            </li>
-          </ul>
-        </div>
+        <Card className="border-chart-1/30 bg-chart-1/5">
+          <CardHeader>
+            <CardTitle className="text-chart-5">
+              What to Expect This Time
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              With the skill loaded, the agent now has detailed, opinionated
+              instructions. You should see:
+            </p>
+            <ul className="space-y-2 text-sm">
+              {expectations.map((e) => (
+                <li key={e} className="flex gap-2">
+                  <span className="text-chart-1">&check;</span>
+                  <span className="text-muted-foreground">{e}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
 
-        <div className="bg-surface border border-border rounded-xl p-6 space-y-4">
-          <h2 className="text-xl font-semibold">The Takeaway</h2>
-          <div className="space-y-3 text-muted">
+        <Card>
+          <CardHeader>
+            <CardTitle>The Takeaway</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-muted-foreground">
             <p>
-              <strong className="text-foreground">Same prompt. Same table. Better result.</strong>{" "}
+              <strong className="text-foreground">
+                Same prompt. Same table. Better result.
+              </strong>{" "}
               The difference is the skill — a shareable, reusable file that
               encodes best practices once and applies them every time.
             </p>
             <p>
               Skills are not magic. They&apos;re structured knowledge. They
-              work because they give the agent the same expertise your best
-              team member would have — consistently.
+              work because they give the agent the same expertise your best team
+              member would have — consistently.
             </p>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
-        <div className="bg-surface border border-border rounded-xl p-6 space-y-4">
-          <h2 className="text-xl font-semibold">What&apos;s Next?</h2>
-          <div className="space-y-3 text-muted">
+        <Card>
+          <CardHeader>
+            <CardTitle>What&apos;s Next?</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-muted-foreground">
             <p>
-              <strong className="text-foreground">Create your own skills.</strong>{" "}
+              <strong className="text-foreground">
+                Create your own skills.
+              </strong>{" "}
               Read the{" "}
               <a
                 href="https://agentskills.io/specification"
-                className="text-accent hover:underline"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -157,11 +158,13 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
               into portable skill files.
             </p>
             <p>
-              <strong className="text-foreground">Browse existing skills.</strong>{" "}
+              <strong className="text-foreground">
+                Browse existing skills.
+              </strong>{" "}
               Check{" "}
               <a
                 href="https://skills.sh"
-                className="text-accent hover:underline"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -170,7 +173,7 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
               ,{" "}
               <a
                 href="https://github.com/Baufest/skills"
-                className="text-accent hover:underline"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -179,7 +182,7 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
               , and{" "}
               <a
                 href="https://github.com/anthropics/awesome-claude-code-extensions"
-                className="text-accent hover:underline"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -188,12 +191,14 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
               for inspiration.
             </p>
             <p>
-              <strong className="text-foreground">Share with your team.</strong>{" "}
+              <strong className="text-foreground">
+                Share with your team.
+              </strong>{" "}
               Commit skills to your repo, publish them on GitHub, or contribute
               to the community at{" "}
               <a
                 href="https://agentskills.io"
-                className="text-accent hover:underline"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -201,21 +206,18 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
               </a>
               .
             </p>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="mt-10 flex justify-between items-center max-w-3xl">
         <Link
           href="/install"
-          className="text-sm text-muted hover:text-foreground"
+          className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
         >
           &larr; Install Skills
         </Link>
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
-        >
+        <Link href="/" className={buttonVariants()}>
           Back to Start
         </Link>
       </div>
