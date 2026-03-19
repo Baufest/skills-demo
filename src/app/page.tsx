@@ -1,65 +1,86 @@
-import Image from "next/image";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button-variants";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const steps = [
+  {
+    step: "1",
+    title: "What Are Skills?",
+    desc: "Learn what agent skills are, where to find them, and why they matter.",
+    href: "/learn",
+  },
+  {
+    step: "2",
+    title: "The Problem",
+    desc: "See a data table with common design issues — inconsistent formatting, bad alignment, missing conventions.",
+    href: "/before",
+  },
+  {
+    step: "3",
+    title: "Try Without Skills",
+    desc: "Ask an AI agent to improve the table without any skill loaded. See what happens.",
+    href: "/try-without",
+  },
+  {
+    step: "4",
+    title: "Install Skills",
+    desc: "Load the Baufest data-table-design skill into your agent.",
+    href: "/install",
+  },
+  {
+    step: "5",
+    title: "Try With Skills",
+    desc: "Repeat the exercise — same prompt, same table, dramatically better results.",
+    href: "/try-with",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="max-w-3xl mx-auto px-6 py-16">
+      <div className="text-center mb-16">
+        <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">
+          Interactive Walkthrough
+        </p>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">
+          Agent Skills Make AI Coding Better
+        </h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          See how reusable, shareable skill files transform vague AI output into
+          consistent, high-quality code that follows your team&apos;s standards.
+        </p>
+      </div>
+
+      <div className="grid gap-4">
+        {steps.map((item) => (
+          <Link key={item.href} href={item.href} className="group">
+            <Card className="transition-all hover:border-primary hover:shadow-sm">
+              <CardHeader className="flex-row items-start gap-4 space-y-0">
+                <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-secondary text-secondary-foreground font-semibold text-sm shrink-0">
+                  {item.step}
+                </span>
+                <div className="space-y-1">
+                  <CardTitle className="group-hover:text-primary transition-colors">
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription>{item.desc}</CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link href="/learn" className={buttonVariants({ size: "lg" })}>
+          Get Started <span aria-hidden="true">&rarr;</span>
+        </Link>
+      </div>
     </div>
   );
 }
