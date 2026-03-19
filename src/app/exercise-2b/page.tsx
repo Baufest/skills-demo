@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CopyBlock } from "@/components/copy-block";
 import { Table2b } from "@/components/table-2b";
 
 export default function Exercise2bPage() {
@@ -43,14 +44,17 @@ export default function Exercise2bPage() {
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
                   1
                 </span>
-                <span>Install the skill:</span>
+                <span>Install the skill from your terminal:</span>
               </li>
             </ol>
-            <pre className="mt-3">
-              <code>{`claude mcp add skills -- \\
-  npx -y @anthropic-ai/skills-server \\
-  https://github.com/Baufest/skills`}</code>
-            </pre>
+            <div className="mt-3">
+              <CopyBlock>{`npx @anthropic-ai/skills-server install baufest/skills/data-table-design`}</CopyBlock>
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              This downloads skill files into your project. It uses{" "}
+              <code>npx</code> as a runner but works in any project — Node,
+              Python, Go, Rust, or anything else.
+            </p>
             <ol start={2} className="space-y-3 text-muted-foreground mt-4">
               <li className="flex gap-3">
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
@@ -58,7 +62,24 @@ export default function Exercise2bPage() {
                 </span>
                 <span>
                   Start a <strong className="text-foreground">new</strong>{" "}
-                  Claude Code session so the skill loads.
+                  <a
+                    href="https://docs.anthropic.com/en/docs/claude-code"
+                    className="text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Claude Code
+                  </a>{" "}
+                  or{" "}
+                  <a
+                    href="https://githubnext.com/projects/copilot-cli"
+                    className="text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Copilot CLI
+                  </a>{" "}
+                  session so the skill loads.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -73,11 +94,9 @@ export default function Exercise2bPage() {
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Prompt:</p>
-          <pre>
-            <code>{`Improve the data table in src/components/table-2b.tsx.
+          <CopyBlock>{`Improve the data table in src/components/table-2b.tsx.
 Fix any design issues you see — alignment, formatting,
-layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
-          </pre>
+layout, and readability. Use the data from src/data/sample-table.ts.`}</CopyBlock>
         </div>
       </div>
 

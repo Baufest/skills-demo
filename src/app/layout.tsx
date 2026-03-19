@@ -23,11 +23,12 @@ export const metadata: Metadata = {
 
 const steps = [
   { href: "/", label: "Home" },
-  { href: "/start", label: "Start" },
+  { href: "/start", label: "1" },
   { href: "/exercise-2a", label: "2a" },
   { href: "/exercise-2b", label: "2b" },
   { href: "/exercise-3a", label: "3a" },
   { href: "/exercise-3b", label: "3b" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function RootLayout({

@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CopyBlock } from "@/components/copy-block";
 import { Table3a } from "@/components/table-3a";
 
 export default function Exercise3aPage() {
@@ -20,8 +21,25 @@ export default function Exercise3aPage() {
       </h1>
       <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
         Same table, new challenge. Ask the agent to restyle the table to match
-        the DuckCorp brand — but without the skill loaded. Let&apos;s see how it
-        interprets the request.
+        the DuckCorp brand — but without the skill loaded. Let&apos;s see how{" "}
+        <a
+          href="https://docs.anthropic.com/en/docs/claude-code"
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Claude Code
+        </a>{" "}
+        or{" "}
+        <a
+          href="https://githubnext.com/projects/copilot-cli"
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Copilot CLI
+        </a>{" "}
+        interprets the request on its own.
       </p>
 
       <div className="space-y-6 max-w-3xl mb-8">
@@ -36,7 +54,8 @@ export default function Exercise3aPage() {
                   1
                 </span>
                 <span>
-                  Open a terminal in this project and launch your AI agent.
+                  Open a terminal in this project and run{" "}
+                  <code>claude</code> or <code>copilot-cli</code>.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -63,11 +82,9 @@ export default function Exercise3aPage() {
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Prompt:</p>
-          <pre>
-            <code>{`Restyle the data table in src/components/table-3a.tsx
+          <CopyBlock>{`Restyle the data table in src/components/table-3a.tsx
 to match the DuckCorp brand. Use the data from
-src/data/sample-table.ts.`}</code>
-          </pre>
+src/data/sample-table.ts.`}</CopyBlock>
         </div>
       </div>
 

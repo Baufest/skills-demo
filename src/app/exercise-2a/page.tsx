@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CopyBlock } from "@/components/copy-block";
 import { Table2a } from "@/components/table-2a";
 
 export default function Exercise2aPage() {
@@ -19,8 +20,25 @@ export default function Exercise2aPage() {
         Improve Without Skills
       </h1>
       <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-        Open your AI coding agent with no skills loaded. Paste the prompt below
-        and see what it does.
+        Open{" "}
+        <a
+          href="https://docs.anthropic.com/en/docs/claude-code"
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Claude Code
+        </a>{" "}
+        or{" "}
+        <a
+          href="https://githubnext.com/projects/copilot-cli"
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Copilot CLI
+        </a>{" "}
+        with no skills loaded. Paste the prompt below and see what it does.
       </p>
 
       <div className="space-y-6 max-w-3xl mb-8">
@@ -35,8 +53,8 @@ export default function Exercise2aPage() {
                   1
                 </span>
                 <span>
-                  Open a terminal in this project and launch your AI agent
-                  (e.g., <code>claude</code>).
+                  Open a terminal in this project and run{" "}
+                  <code>claude</code> or <code>copilot-cli</code>.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -63,11 +81,9 @@ export default function Exercise2aPage() {
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Prompt:</p>
-          <pre>
-            <code>{`Improve the data table in src/components/table-2a.tsx.
+          <CopyBlock>{`Improve the data table in src/components/table-2a.tsx.
 Fix any design issues you see — alignment, formatting,
-layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
-          </pre>
+layout, and readability. Use the data from src/data/sample-table.ts.`}</CopyBlock>
         </div>
       </div>
 
@@ -78,7 +94,7 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
           href="/start"
           className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
         >
-          &larr; Start
+          &larr; 1
         </Link>
         <Link href="/exercise-2b" className={buttonVariants()}>
           Next: Exercise 2b <span aria-hidden="true">&rarr;</span>

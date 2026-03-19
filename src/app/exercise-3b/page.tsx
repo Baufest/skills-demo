@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CopyBlock } from "@/components/copy-block";
 import { Table3b } from "@/components/table-3b";
 
 export default function Exercise3bPage() {
@@ -34,18 +35,37 @@ export default function Exercise3bPage() {
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
                   1
                 </span>
-                <span>
-                  Make sure the Baufest skills are installed (from Exercise 2b).
-                  The duckcorp-brand skill is in the same collection.
-                </span>
+                <span>Install the duckcorp-brand skill:</span>
               </li>
+            </ol>
+            <div className="mt-3">
+              <CopyBlock>{`npx @anthropic-ai/skills-server install baufest/skills/duckcorp-brand`}</CopyBlock>
+            </div>
+            <ol start={2} className="space-y-3 text-muted-foreground mt-4">
               <li className="flex gap-3">
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
                   2
                 </span>
                 <span>
                   Start a <strong className="text-foreground">new</strong>{" "}
-                  Claude Code session so the skill loads.
+                  <a
+                    href="https://docs.anthropic.com/en/docs/claude-code"
+                    className="text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Claude Code
+                  </a>{" "}
+                  or{" "}
+                  <a
+                    href="https://githubnext.com/projects/copilot-cli"
+                    className="text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Copilot CLI
+                  </a>{" "}
+                  session so the skill loads.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -60,11 +80,9 @@ export default function Exercise3bPage() {
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Prompt:</p>
-          <pre>
-            <code>{`Restyle the data table in src/components/table-3b.tsx
+          <CopyBlock>{`Restyle the data table in src/components/table-3b.tsx
 to match the DuckCorp brand. Use the data from
-src/data/sample-table.ts.`}</code>
-          </pre>
+src/data/sample-table.ts.`}</CopyBlock>
         </div>
       </div>
 
