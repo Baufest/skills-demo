@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export function BadTable() {
+export function Table2a() {
   return (
     <div className="overflow-x-auto rounded-lg border">
       <Table>

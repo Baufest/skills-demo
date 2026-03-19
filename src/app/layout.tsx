@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { href: "/", label: "Intro" },
-  { href: "/learn", label: "1. What Are Skills?" },
-  { href: "/before", label: "2. The Problem" },
-  { href: "/try-without", label: "3. Without Skills" },
-  { href: "/install", label: "4. Install Skills" },
-  { href: "/try-with", label: "5. With Skills" },
+  { href: "/", label: "Home" },
+  { href: "/start", label: "Start" },
+  { href: "/exercise-2a", label: "2a" },
+  { href: "/exercise-2b", label: "2b" },
+  { href: "/exercise-3a", label: "3a" },
+  { href: "/exercise-3b", label: "3b" },
 ];
 
 export default function RootLayout({

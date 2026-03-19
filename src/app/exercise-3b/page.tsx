@@ -7,26 +7,26 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { WatchForCard } from "@/_hints/watch-for-card";
+import { Table3b } from "@/components/table-3b";
 
-export default function TryWithoutPage() {
+export default function Exercise3bPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="max-w-5xl mx-auto px-6 py-12">
       <p className="text-sm font-medium text-primary uppercase tracking-wider mb-2">
-        Step 3
+        Exercise 3b
       </p>
       <h1 className="text-3xl font-bold tracking-tight mb-3">
-        Try Without Skills
+        DuckCorp Brand — With Skill
       </h1>
-      <p className="text-lg text-muted-foreground mb-8">
-        Open your AI coding agent and try to improve the table. No skills
-        loaded — just a plain prompt.
+      <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
+        Now load the <strong>duckcorp-brand</strong> skill and give the agent
+        the same prompt. Compare the result to Exercise 3a.
       </p>
 
-      <div className="space-y-6">
+      <div className="space-y-6 max-w-3xl mb-8">
         <Card>
           <CardHeader>
-            <CardTitle>Instructions</CardTitle>
+            <CardTitle>Setup</CardTitle>
           </CardHeader>
           <CardContent>
             <ol className="space-y-3 text-muted-foreground">
@@ -35,8 +35,8 @@ export default function TryWithoutPage() {
                   1
                 </span>
                 <span>
-                  Open a terminal in this project directory and launch your AI
-                  coding agent (e.g., <code>claude</code> for Claude Code).
+                  Make sure the Baufest skills are installed (from Exercise 2b).
+                  The duckcorp-brand skill is in the same collection.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -44,48 +44,41 @@ export default function TryWithoutPage() {
                   2
                 </span>
                 <span>
-                  Make sure{" "}
-                  <strong className="text-foreground">
-                    no skills are loaded
-                  </strong>
-                  . In Claude Code, you can verify with <code>/skills</code>.
+                  Start a <strong className="text-foreground">new</strong>{" "}
+                  Claude Code session so the skill loads.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
                   3
                 </span>
-                <span>
-                  Copy and paste the prompt below into your agent.
-                </span>
+                <span>Copy and paste the prompt below.</span>
               </li>
             </ol>
           </CardContent>
         </Card>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium">
-            Copy this prompt into your agent:
-          </p>
+          <p className="text-sm font-medium">Prompt:</p>
           <pre>
-            <code>{`Improve the data table in src/components/bad-table.tsx.
-Fix any design issues you see — alignment, formatting,
-layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
+            <code>{`Restyle the data table in src/components/table-3b.tsx
+to match the DuckCorp brand. Use the data from
+src/data/sample-table.ts.`}</code>
           </pre>
         </div>
-
-        <WatchForCard />
       </div>
+
+      <Table3b />
 
       <div className="mt-10 flex justify-between items-center">
         <Link
-          href="/before"
+          href="/exercise-3a"
           className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
         >
-          &larr; The Problem
+          &larr; Exercise 3a
         </Link>
-        <Link href="/install" className={buttonVariants()}>
-          Next: Install Skills <span aria-hidden="true">&rarr;</span>
+        <Link href="/" className={buttonVariants()}>
+          Back to Home
         </Link>
       </div>
     </div>

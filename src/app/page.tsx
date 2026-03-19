@@ -7,36 +7,36 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const steps = [
+const exercises = [
   {
-    step: "1",
-    title: "What Are Skills?",
-    desc: "Learn what agent skills are, where to find them, and why they matter.",
-    href: "/learn",
+    step: "Start",
+    title: "The Starting Point",
+    desc: "See the invoice table as-is. Spot what you'd improve.",
+    href: "/start",
   },
   {
-    step: "2",
-    title: "The Problem",
-    desc: "See a data table with common design issues — inconsistent formatting, bad alignment, missing conventions.",
-    href: "/before",
+    step: "2a",
+    title: "Improve Without Skills",
+    desc: "Ask an AI agent to fix the table — no skills loaded.",
+    href: "/exercise-2a",
   },
   {
-    step: "3",
-    title: "Try Without Skills",
-    desc: "Ask an AI agent to improve the table without any skill loaded. See what happens.",
-    href: "/try-without",
+    step: "2b",
+    title: "Improve With a Data Table Skill",
+    desc: "Same prompt, but with the data-table-design skill loaded.",
+    href: "/exercise-2b",
   },
   {
-    step: "4",
-    title: "Install Skills",
-    desc: "Load the Baufest data-table-design skill into your agent.",
-    href: "/install",
+    step: "3a",
+    title: "DuckCorp Brand — Without Skill",
+    desc: "Ask the agent to apply DuckCorp branding — no skill loaded.",
+    href: "/exercise-3a",
   },
   {
-    step: "5",
-    title: "Try With Skills",
-    desc: "Repeat the exercise — same prompt, same table, dramatically better results.",
-    href: "/try-with",
+    step: "3b",
+    title: "DuckCorp Brand — With Skill",
+    desc: "Same prompt, but with the duckcorp-brand skill loaded.",
+    href: "/exercise-3b",
   },
 ];
 
@@ -51,13 +51,13 @@ export default function Home() {
           Agent Skills Make AI Coding Better
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          See how reusable, shareable skill files transform vague AI output into
-          consistent, high-quality code that follows your team&apos;s standards.
+          Five exercises, one table. See how reusable skill files transform
+          vague AI output into consistent, opinionated code.
         </p>
       </div>
 
       <div className="grid gap-4">
-        {steps.map((item) => (
+        {exercises.map((item) => (
           <Link key={item.href} href={item.href} className="group">
             <Card className="transition-all hover:border-primary hover:shadow-sm">
               <CardHeader className="flex-row items-start gap-4 space-y-0">
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link href="/learn" className={buttonVariants({ size: "lg" })}>
+        <Link href="/start" className={buttonVariants({ size: "lg" })}>
           Get Started <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
