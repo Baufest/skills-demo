@@ -65,7 +65,9 @@ export default function Home() {
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-muted-foreground">
             <p>
-              This walkthrough is designed for{" "}
+              Skills work with a variety of AI coding agents and can be
+              installed in different ways. For this demo, we&apos;ll assume
+              you have{" "}
               <a
                 href="https://docs.anthropic.com/en/docs/claude-code"
                 className="text-primary hover:underline"
@@ -74,28 +76,24 @@ export default function Home() {
               >
                 Claude Code
               </a>{" "}
-              and{" "}
+              or{" "}
               <a
-                href="https://githubnext.com/projects/copilot-cli"
+                href="https://github.com/features/copilot/cli"
                 className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHub Copilot CLI
-              </a>
-              . You&apos;ll need one of them installed and ready to go.
+              </a>{" "}
+              installed, and we&apos;ll install skills using{" "}
+              <code>npx skills</code>.
             </p>
             <p>
-              Skills are installed using{" "}
-              <code>npx skills</code> — a lightweight CLI
-              that downloads skill files into your project. It uses{" "}
-              <code>npx</code> as a convenient runner, but the skills themselves
-              are just markdown files.{" "}
-              <strong className="text-foreground">
-                Your project does not need to be Node-based.
-              </strong>{" "}
-              The command works in Python, Go, Rust, or any other project — it
-              simply writes files to disk.
+              <code>npx skills</code> is a lightweight CLI that downloads
+              skill files into your project. The skills themselves are just
+              markdown files — <code>npx</code> is simply a convenient runner.
+              Your project doesn&apos;t need to be Node-based; the command
+              works in any project and simply writes files to disk.
             </p>
           </CardContent>
         </Card>

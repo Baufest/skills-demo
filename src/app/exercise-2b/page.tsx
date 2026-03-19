@@ -72,7 +72,7 @@ export default function Exercise2bPage() {
                   </a>{" "}
                   or{" "}
                   <a
-                    href="https://githubnext.com/projects/copilot-cli"
+                    href="https://github.com/features/copilot/cli"
                     className="text-primary hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
