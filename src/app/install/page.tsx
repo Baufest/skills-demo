@@ -9,37 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-const skillFeatures = [
-  {
-    label: "Column ordering",
-    desc: "ID first, then most-compared dimensions, numbers, actions",
-  },
-  {
-    label: "Alignment rules",
-    desc: "Text left, numbers right, status center",
-  },
-  {
-    label: "Number formatting",
-    desc: "Locale separators, consistent decimals, right-aligned",
-  },
-  {
-    label: "Currency formatting",
-    desc: "Symbol + amount, proper locale rules",
-  },
-  {
-    label: "Date consistency",
-    desc: "One format throughout, with relative date thresholds",
-  },
-  {
-    label: "Status indicators",
-    desc: "Color-coded badges with text (never color-only)",
-  },
-  {
-    label: "Null handling",
-    desc: 'Em-dash (\u2014), not "N/A" or blank',
-  },
-];
+import { SkillFeaturesCard } from "@/_hints/skill-features-card";
 
 export default function InstallPage() {
   return (
@@ -174,28 +144,7 @@ table-formatting.md`}</code>
           </TabsContent>
         </Tabs>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>What the Skill Contains</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground mb-4">
-              The <code>data-table-design</code> skill includes detailed
-              instructions for:
-            </p>
-            <ul className="space-y-2">
-              {skillFeatures.map((f) => (
-                <li key={f.label} className="flex gap-2 text-sm">
-                  <span className="text-primary mt-0.5">&bull;</span>
-                  <span>
-                    <strong>{f.label}</strong>
-                    <span className="text-muted-foreground"> — {f.desc}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+        <SkillFeaturesCard />
       </div>
 
       <div className="mt-10 flex justify-between items-center">

@@ -13,8 +13,6 @@ export interface Invoice {
   region: string;
 }
 
-// This data intentionally uses inconsistent formats to demonstrate
-// common data table issues that skills can fix.
 export const invoices: Invoice[] = [
   {
     id: "INV-001",

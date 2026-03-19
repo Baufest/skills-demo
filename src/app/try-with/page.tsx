@@ -8,17 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { BadTable } from "@/components/bad-table";
-
-const expectations = [
-  "ID column moved to the first position",
-  "All numeric columns right-aligned",
-  "Consistent date formatting throughout (e.g., Jan 15, 2025)",
-  "Currency symbols with proper locale formatting ($24,500.00)",
-  "Color-coded status badges with text labels",
-  "Em-dashes (\u2014) for null/empty values",
-  "Currency merged into the amount column",
-  "Consistent decimal precision across all number columns",
-];
+import { ExpectationsCard } from "@/_hints/expectations-card";
 
 export default function TryWithPage() {
   return (
@@ -94,27 +84,7 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
           </pre>
         </div>
 
-        <Card className="border-chart-1/30 bg-chart-1/5">
-          <CardHeader>
-            <CardTitle className="text-chart-5">
-              What to Expect This Time
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">
-              With the skill loaded, the agent now has detailed, opinionated
-              instructions. You should see:
-            </p>
-            <ul className="space-y-2 text-sm">
-              {expectations.map((e) => (
-                <li key={e} className="flex gap-2">
-                  <span className="text-chart-1">&check;</span>
-                  <span className="text-muted-foreground">{e}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+        <ExpectationsCard />
 
         <Card>
           <CardHeader>
