@@ -20,7 +20,7 @@ export default function Exercise3bPage() {
         DuckCorp Brand — With Skill
       </h1>
       <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-        Now load the <strong>duckcorp-brand</strong> skill and give the agent
+        Now load the <strong>demo-duck-style</strong> skill, that can be used to align with fictitious brand DuckCorp brand standards and give the agent
         the same prompt. Compare the result to Exercise 3a.
       </p>
 
@@ -35,11 +35,11 @@ export default function Exercise3bPage() {
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-secondary-foreground text-xs font-bold shrink-0">
                   1
                 </span>
-                <span>Install the duckcorp-brand skill:</span>
+                <span>Install the demo-duck-style skill:</span>
               </li>
             </ol>
             <div className="mt-3">
-              <CopyBlock>{`npx skills install baufest/skills --skill duckcorp-brand`}</CopyBlock>
+              <CopyBlock>{`npx skills install baufest/skills --skill demo-duck-style`}</CopyBlock>
             </div>
             <ol start={2} className="space-y-3 text-muted-foreground mt-4">
               <li className="flex gap-3">
