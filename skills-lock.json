@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "baufest-brand": {
+      "source": "baufest/skills",
+      "sourceType": "github",
+      "computedHash": "104ea0968c8e1c1d1c03cf37300fec7444e291e9d0f0837fb647e3f178f5f8de"
+    }
+  }
+}
