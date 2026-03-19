@@ -7,33 +7,33 @@
 :root {
   --code-bg: #1e1e2e;
   --code-fg: #cdd6f4;
-  --background: oklch(0.985 0.002 300);
+  --background: oklch(0.985 0.002 320);
   --foreground: oklch(0.145 0.005 285);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0.005 285);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0.005 285);
-  --primary: oklch(0.488 0.243 292);
+  --primary: oklch(0.488 0.243 320);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.955 0.025 293);
-  --secondary-foreground: oklch(0.375 0.2 292);
-  --muted: oklch(0.965 0.01 293);
+  --secondary: oklch(0.955 0.025 320);
+  --secondary-foreground: oklch(0.375 0.2 320);
+  --muted: oklch(0.965 0.01 320);
   --muted-foreground: oklch(0.5 0.02 285);
-  --accent: oklch(0.955 0.025 293);
-  --accent-foreground: oklch(0.375 0.2 292);
+  --accent: oklch(0.955 0.025 320);
+  --accent-foreground: oklch(0.375 0.2 320);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.905 0.015 293);
-  --input: oklch(0.905 0.015 293);
-  --ring: oklch(0.488 0.243 292);
-  --chart-1: oklch(0.488 0.243 292);
-  --chart-2: oklch(0.623 0.214 292);
-  --chart-3: oklch(0.546 0.245 292);
-  --chart-4: oklch(0.7 0.15 292);
-  --chart-5: oklch(0.424 0.199 292);
+  --border: oklch(0.905 0.015 320);
+  --input: oklch(0.905 0.015 320);
+  --ring: oklch(0.488 0.243 320);
+  --chart-1: oklch(0.488 0.243 320);
+  --chart-2: oklch(0.623 0.214 320);
+  --chart-3: oklch(0.546 0.245 320);
+  --chart-4: oklch(0.7 0.15 320);
+  --chart-5: oklch(0.424 0.199 320);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.488 0.243 292);
+  --sidebar-primary: oklch(0.488 0.243 320);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
@@ -73,7 +73,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: var(--font-sans);
+  /* Use Next/font's Geist Sans variable for Tailwind's `font-sans`. */
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -117,18 +118,18 @@ span code {
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.7 0.2 292);
+  --primary: oklch(0.7 0.2 320);
   --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0.02 292);
-  --secondary-foreground: oklch(0.8 0.15 292);
+  --secondary: oklch(0.269 0.02 320);
+  --secondary-foreground: oklch(0.8 0.15 320);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0.02 292);
-  --accent-foreground: oklch(0.8 0.15 292);
+  --accent: oklch(0.269 0.02 320);
+  --accent-foreground: oklch(0.8 0.15 320);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.7 0.2 292);
+  --ring: oklch(0.7 0.2 320);
 }
 
 @layer base {
