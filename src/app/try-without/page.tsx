@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { WatchForCard } from "@/_hints/watch-for-card";
 
 export default function TryWithoutPage() {
   return (
@@ -73,36 +74,7 @@ layout, and readability. Use the data from src/data/sample-table.ts.`}</code>
           </pre>
         </div>
 
-        <Card className="border-chart-4/30 bg-chart-4/5">
-          <CardHeader>
-            <CardTitle className="text-chart-5">What to Watch For</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">
-              Without a skill, the agent will make improvements — but
-              they&apos;ll be inconsistent and incomplete. Pay attention to:
-            </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {[
-                "Does it right-align all numeric columns? Or just some?",
-                "Does it pick a consistent date format? Which one?",
-                "Does it format currencies with locale-appropriate symbols and separators?",
-                "Does it use em-dashes for null values? Or something else?",
-                "Does it reorder columns logically (ID first)?",
-                "Does it add visual status indicators with color?",
-              ].map((q) => (
-                <li key={q} className="flex gap-2">
-                  <span className="text-chart-4">&bull;</span>
-                  <span>{q}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-sm font-medium text-foreground">
-              Take a screenshot or note what the agent did. You&apos;ll compare
-              it later.
-            </p>
-          </CardContent>
-        </Card>
+        <WatchForCard />
       </div>
 
       <div className="mt-10 flex justify-between items-center">
