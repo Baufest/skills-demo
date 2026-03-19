@@ -39,7 +39,7 @@ export default function Exercise3bPage() {
               </li>
             </ol>
             <div className="mt-3">
-              <CopyBlock>{`npx @anthropic-ai/skills-server install baufest/skills/duckcorp-brand`}</CopyBlock>
+              <CopyBlock>{`npx skills install baufest/skills --skill duckcorp-brand`}</CopyBlock>
             </div>
             <ol start={2} className="space-y-3 text-muted-foreground mt-4">
               <li className="flex gap-3">

@@ -87,7 +87,7 @@ export default function Home() {
             </p>
             <p>
               Skills are installed using{" "}
-              <code>npx @anthropic-ai/skills-server</code> — a lightweight CLI
+              <code>npx skills</code> — a lightweight CLI
               that downloads skill files into your project. It uses{" "}
               <code>npx</code> as a convenient runner, but the skills themselves
               are just markdown files.{" "}
@@ -119,7 +119,7 @@ export default function Home() {
             agent is still a bit clunky — some agents look in{" "}
             <code>.agents/</code>, others use product-specific directories like{" "}
             <code>.github/skills/</code> or editor settings. The{" "}
-            <code>npx @anthropic-ai/skills-server install</code> command handles
+            <code>npx skills install</code> command handles
             this for you, placing files where your agent expects them.
           </p>
         </Callout>

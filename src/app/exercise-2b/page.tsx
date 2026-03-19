@@ -48,7 +48,7 @@ export default function Exercise2bPage() {
               </li>
             </ol>
             <div className="mt-3">
-              <CopyBlock>{`npx @anthropic-ai/skills-server install baufest/skills/data-table-design`}</CopyBlock>
+              <CopyBlock>{`npx skills install baufest/skills --skill data-table-design`}</CopyBlock>
             </div>
             <p className="text-xs text-muted-foreground mt-2">
               This downloads skill files into your project. It uses{" "}
